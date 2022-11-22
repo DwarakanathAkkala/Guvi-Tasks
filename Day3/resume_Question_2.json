@@ -1,0 +1,143 @@
+{
+  "_comment": "Create your own resume data in JSON format",
+  "basics": {
+    "name": "Dwarakanath Akkala",
+    "email": "dwarakanath.akkala@gmail.com",
+    "phone": "8008844558",
+    "degree": "B. Tech",
+    "summary": "Seeking a responsible job with an oppurtunity for professional challenges to be solved in an effective or creative manner.",
+    "location": {
+      "address": "Flat No. 512, Gayathri Towers, Tata Nagar",
+      "postalCode": "517501",
+      "city": "Tirupati",
+      "country": "India",
+      "region": "Andhra Pradesh"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Dwarakanath Akkala",
+        "url": "https://www.linkedin.com/in/dwarakanath-akkala-77a849136/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Talent Logic Info Services",
+      "position": "MEAN Stack Developer",
+      "website": "https://www.talentlogic.com/",
+      "startDate": "2019-08-26",
+      "endDate": "2020-08-26",
+      "summary": "Built a Website for Company Employees which is a platform for many important operations of the Company done by Recruiters, Clients, BDM's, Resource Managers."
+    },
+    {
+      "company": "Techstasy Technologies",
+      "position": "Front End Developer",
+      "website": "https://www.techstacy.com/",
+      "startDate": "2020-09-28",
+      "endDate": "2021-03-15",
+      "summary": "I have contributed front-end for e-Commerce Shopping Web Application named Cypher which offers various fashion products especially Footwear using Angular 8."
+    },
+    {
+      "company": "Sid’s Farm",
+      "position": "Product Manager Intern",
+      "website": "https://sidsfarm.com/",
+      "startDate": "2021-12-08",
+      "endDate": "2022-03-08",
+      "summary": "My assigned responsibilities were to manage the Tech Team with all their work and operations. And also act as bridge between the Employees and the Tech Team where Employees come up with various Product Requirements for the Business Operations. I have created various templates like Use Case Template, Product Requirements Template as per our Business requirements which are used to create Feature Documentations for any Product requirement."
+    }
+  ],
+  "education": [
+    {
+      "institution": "NIT Andhra Pradesh",
+      "area": "Bachelor of Technology",
+      "startYear": "2015",
+      "endYear": "2019",
+      "percentage": "54",
+      "courses": [
+        "Computer Science and Education"
+      ]
+    },
+    {
+      "institution": "Sri Chaitanya Junior College",
+      "area": "Intermediate",
+      "startYear": "2013",
+      "endYear": "2015",
+      "percentage": "83.2",
+      "courses": [
+        "Mathematics", "Physics", "Chemistry"
+      ]
+    },
+    {
+      "institution": "Brilliant Grammar High School",
+      "area": "Secondary School",
+      "startYear": "2012",
+      "endYear": "2013",
+      "percentage": "90",
+      "courses": [
+        "Sciences"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "Intermediate",
+      "keywords": [
+        "HTML", "CSS", "Bootstrap", "JavaScript", "Angular"
+      ]
+    },
+    {
+      "name": "SMS Services",
+      "level": "Advanced",
+      "keywords": [
+        "Textlocal", "DLT"
+      ]
+    },
+    {
+      "name": "Product Requirement Documentation",
+      "level": "Intermediate",
+      "keywords": [
+        "Feature Documentation"
+      ]
+    }      
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Intermediate"
+    },
+    {
+      "language": "Telugu",
+      "fluency": "Advanced"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Intermediate"
+    },
+    {
+      "language": "Tamil",
+      "fluency": "Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Sports",
+      "keywords": [
+        "Cricket", "Badminton"
+      ]
+    },
+    {
+      "name": "Gaming",
+      "keywords": [
+        "Clash of Clans", "Clash Royale", "Mini Militia"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Pop", "Rock"
+      ]
+    }
+  ]
+}
