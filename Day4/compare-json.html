@@ -1,0 +1,23 @@
+<!-- Q1. How to compare two JSON have the same properties without order -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare JSON without Order</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: #3FC1C9;">Check Console for comparison result</h1>
+    <!-- Lodash Script CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+</body>
+</html>
+<script>
+    // Initialize and Declare Objects to Compare
+    var obj1 = {name: "Person 1", age: 5};
+    var obj2 = {age: 5, name:"Person 1"};
+
+    // Performs a deep comparison between two values to determine if they are equivalent even for objects without order.
+    console.log("obj1 matches obj2: " + _.isEqual(obj1, obj2));
+</script>

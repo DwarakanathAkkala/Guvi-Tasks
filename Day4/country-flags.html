@@ -1,0 +1,40 @@
+<!-- Q2. Use the REST Countries API URL and display all the country flags in the console -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flags</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: #FF9A00;">Check Console for Flags</h1>
+</body>
+</html>
+<script>
+    // API URL for getting the data
+    const url = "https://restcountries.com/v3.1/all";
+    
+    // Initialize XML HTTP Request
+    let xhr = new XMLHttpRequest();
+    
+    // Open a request and pass URL to open method
+    xhr.open("GET", url);
+    
+    // Process the request
+    xhr.onload = function () {
+        if(xhr.status >=200 && xhr.status <300) {
+            let data = JSON.parse(this.response);
+            console.log(data);
+            data.forEach(element => {
+                console.log(`
+                Country: ${element.name.common}
+                Flag: ${element.flags.png}
+                `);
+            });
+        }
+    }
+    
+    // Send the request
+    xhr.send();
+</script>
