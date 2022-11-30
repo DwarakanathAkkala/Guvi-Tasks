@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Class</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    // Create Class
+    class Movie {
+        constructor(title, studio, rating = "PG") {
+            this.title = title;
+            this.studio = studio;
+            this.rating = rating;
+        }
+    }
+
+    // Instantiation
+    let movie1 = new Movie("Casino Royale", "Eon Production", "PG13");
+    let movie2 = new Movie("Saaho", "UV Creations", "PG");
+    let movie3 = new Movie("RRR", "DVV Entertainement", "PG10");
+    let movie4 = new Movie("Major", "Sony Pictures", "PG5");
+    let movie5 = new Movie("Pushpa", "Lyca Productions", "PG");
+
+    let allMovies = [movie1, movie2, movie3, movie4, movie5];
+    let pgMovies = [];
+
+    function getPG(arr) {
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].rating == "PG") pgMovies.push(arr[i].title);
+        }
+        console.log("PG rated movies are ", pgMovies);
+    }
+
+    getPG(allMovies);
+
+    // Output
+    // PG rated movies are ['Saaho', 'Pushpa']
+
+</script>
