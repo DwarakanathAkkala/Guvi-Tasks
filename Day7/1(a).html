@@ -1,0 +1,201 @@
+<!-- Q1. Solving problems using array functions on the rest countries' data. -->
+<!--  a. Get all the countries from the Asia continent /region using the Filter function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Data</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: #F6416C;">Check Console for Countries Data</h1>
+</body>
+</html>
+<script>
+    // API URL for getting the data
+    const url = "https://restcountries.com/v3.1/all";
+
+    // Initialize XML HTTP Request
+    let xhr = new XMLHttpRequest();
+
+    // Open the request and pass the url to OPEN-method
+    xhr.open("GET", url);
+
+    // Process the request
+    xhr.onload = function() {
+        if(xhr.status >= 200 && xhr.status < 300){
+            let data = JSON.parse(this.response);
+            let filteredCountries = data.filter(countries => countries.continents[0] == "Asia"); // filter function
+            filteredCountries.forEach(element => {
+                console.log(`
+                Country: ${element.name.common}
+                Region: ${element.region}
+                `);
+            });
+        }
+    }
+
+    // Send the request
+    xhr.send();
+</script>
+
+<!-- Output -->
+
+<!-- 
+Country: Maldives
+Region: Asia
+
+Country: Pakistan
+Region: Asia
+
+Country: Malaysia
+Region: Asia
+
+Country: Uzbekistan
+Region: Asia
+
+Country: Christmas Island
+Region: Oceania
+
+Country: Singapore
+Region: Asia
+
+Country: Qatar
+Region: Asia
+
+Country: Kazakhstan
+Region: Asia
+
+Country: British Indian Ocean Territory
+Region: Africa
+
+Country: Bahrain
+Region: Asia
+
+Country: India
+Region: Asia
+
+Country: Macau
+Region: Asia
+
+Country: Syria
+Region: Asia
+
+Country: Kyrgyzstan
+Region: Asia
+
+Country: Palestine
+Region: Asia
+
+Country: Taiwan
+Region: Asia
+
+Country: South Korea
+Region: Asia
+
+Country: Iraq
+Region: Asia
+
+Country: Cambodia
+Region: Asia
+
+Country: Cocos (Keeling) Islands
+Region: Oceania
+
+Country: Sri Lanka
+Region: Asia
+
+Country: Israel
+Region: Asia
+
+Country: Tajikistan
+Region: Asia
+
+Country: Azerbaijan
+Region: Asia
+
+Country: Georgia
+Region: Asia
+
+Country: China
+Region: Asia
+
+Country: Thailand
+Region: Asia
+
+Country: Indonesia
+Region: Asia
+
+Country: Turkmenistan
+Region: Asia
+
+Country: Turkey
+Region: Asia
+
+Country: Iran
+Region: Asia
+
+Country: Lebanon
+Region: Asia
+
+Country: Philippines
+Region: Asia
+
+Country: Kuwait
+Region: Asia
+
+Country: Oman
+Region: Asia
+
+Country: Afghanistan
+Region: Asia
+
+Country: Armenia
+Region: Asia
+
+Country: Bangladesh
+Region: Asia
+
+Country: Laos
+Region: Asia
+
+Country: Nepal
+Region: Asia
+
+Country: Myanmar
+Region: Asia
+
+Country: United Arab Emirates
+Region: Asia
+
+Country: Bhutan
+Region: Asia
+
+Country: Jordan
+Region: Asia
+
+Country: Vietnam
+Region: Asia
+
+Country: Brunei
+Region: Asia
+
+Country: Japan
+Region: Asia
+
+Country: Hong Kong
+Region: Asia
+
+Country: Saudi Arabia
+Region: Asia
+
+Country: North Korea
+Region: Asia
+
+Country: Mongolia
+Region: Asia
+
+Country: Yemen
+Region: Asia -->
