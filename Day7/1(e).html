@@ -1,0 +1,67 @@
+<!-- Q1. Solving problems using array functions on the rest countries' data. -->
+<!--  e. Print the country which uses US Dollars as currency. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Data</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: #332FD0;">Check Console for Countries with USD</h1>
+</body>
+</html>
+<script>
+    // API URL for getting the data
+    const url = "https://restcountries.com/v3.1/all";
+
+    // Initialize XML HTTP Request
+    let xhr = new XMLHttpRequest();
+
+    // Open the request and pass the url to OPEN-method
+    xhr.open("GET", url);
+
+    // Process the request
+    xhr.onload = function() {
+        if(xhr.status >= 200 && xhr.status < 300){
+            let data = JSON.parse(this.response);
+            let countriesUSD = [];
+            data.forEach(element => {
+               if(element.currencies != undefined && element.currencies.hasOwnProperty('USD')){
+                countriesUSD.push(element.name.common);
+               }
+            });
+            console.log('Countries with US Dollars as Currency are: ', countriesUSD);
+        }
+    }
+
+    // Send the request
+    xhr.send();
+</script>
+
+<!-- Output -->
+<!-- 
+Countries with US Dollars as Currency are: [
+"Ecuador",
+"British Indian Ocean Territory"
+"Puerto Rico"
+"Timor-Leste"
+"Cambodia"
+"United States Virgin Islands"
+"Micronesia"
+"American Samoa"
+"Marshall Islands"
+"Bahamas"
+"Northern Mariana Islands"
+"Guam"
+"El Salvador"
+"Panama"
+"United States"
+"Palau"
+"Turks and Caicos Islands"
+"British Virgin Islands"
+"United States Minor Outlying Islands"
+"Caribbean Netherlands"
+] -->
