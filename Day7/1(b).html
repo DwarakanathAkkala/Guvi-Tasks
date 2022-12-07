@@ -1,0 +1,609 @@
+<!-- Q1. Solving problems using array functions on the rest countries' data. -->
+<!--  b. Get all the countries with a population of less than 2 lakhs using Filter function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Population Data</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: #6D67E4;">Check Console for Countries Population Data</h1>
+</body>
+</html>
+<script>
+    // API URL for getting the data
+    const url = "https://restcountries.com/v3.1/all";
+
+    // Initialize XML HTTP Request
+    let xhr = new XMLHttpRequest();
+
+    // Open the request and pass the url to OPEN-method
+    xhr.open("GET", url);
+
+    // Process the request
+    xhr.onload = function() {
+        if(xhr.status >= 200 && xhr.status < 300){
+            let data = JSON.parse(this.response);
+            let filteredCountries = data.filter(countries => countries.population > 200000); // filter function
+            filteredCountries.forEach(element => {
+                console.log(`
+                Country: ${element.name.common}
+                Population: ${element.population}
+                `);
+            });
+        }
+    }
+
+    // Send the request
+    xhr.send();
+</script>
+
+<!-- Output -->
+
+<!--
+Country: Mauritania
+Population: 4649660
+ 
+Country: Argentina
+Population: 45376763
+
+Country: Sweden
+Population: 10353442
+
+Country: Maldives
+Population: 540542
+
+Country: Mexico
+Population: 128932753
+
+Country: New Zealand
+Population: 5084300
+
+Country: Ecuador
+Population: 17643060
+
+Country: Montenegro
+Population: 621718
+
+Country: Pakistan
+Population: 220892331
+
+Country: Zambia
+Population: 18383956
+
+Country: Malaysia
+Population: 32365998
+
+Country: Norway
+Population: 5379475
+
+Country: Uzbekistan
+Population: 34232050
+
+Country: Vanuatu
+Population: 307150
+
+Country: Singapore
+Population: 5685807
+
+Country: Suriname
+Population: 586634
+
+Country: Western Sahara
+Population: 510713
+
+Country: Costa Rica
+Population: 5094114
+
+Country: Ireland
+Population: 4994724
+
+Country: Australia
+Population: 25687041
+
+Country: Libya
+Population: 6871287
+
+Country: Qatar
+Population: 2881060
+
+Country: Mauritius
+Population: 1265740
+
+Country: Kazakhstan
+Population: 18754440
+
+Country: Albania
+Population: 2837743
+
+Country: Bahrain
+Population: 1701583
+
+Country: Papua New Guinea
+Population: 8947027
+
+Country: Burundi
+Population: 11890781
+
+Country: India
+Population: 1380004385
+
+Country: Uruguay
+Population: 3473727
+
+Country: Barbados
+Population: 287371
+
+Country: New Caledonia
+Population: 271960
+
+Country: Latvia
+Population: 1901548
+
+Country: Estonia
+Population: 1331057
+
+Country: Puerto Rico
+Population: 3194034
+
+Country: Macau
+Population: 649342
+
+Country: Cyprus
+Population: 1207361
+
+Country: Greece
+Population: 10715549
+
+Country: Syria
+Population: 17500657
+
+Country: Lithuania
+Population: 2794700
+
+Country: Niger
+Population: 24206636
+
+Country: Kyrgyzstan
+Population: 6591600
+
+Country: Trinidad and Tobago
+Population: 1399491
+
+Country: Togo
+Population: 8278737
+
+Country: Palestine
+Population: 4803269
+
+Country: Madagascar
+Population: 27691019
+
+Country: Croatia
+Population: 4047200
+
+Country: Haiti
+Population: 11402533
+
+Country: Timor-Leste
+Population: 1318442
+
+Country: Martinique
+Population: 378243
+
+Country: Cuba
+Population: 11326616
+
+Country: Taiwan
+Population: 23503349
+
+Country: Eswatini
+Population: 1160164
+
+Country: Ukraine
+Population: 44134693
+
+Country: South Korea
+Population: 51780579
+
+Country: Peru
+Population: 32971846
+
+Country: Iraq
+Population: 40222503
+
+Country: Moldova
+Population: 2617820
+
+Country: Venezuela
+Population: 28435943
+
+Country: Guyana
+Population: 786559
+
+Country: Cambodia
+Population: 16718971
+
+Country: Malta
+Population: 525285
+
+Country: Sri Lanka
+Population: 21919000
+
+Country: Israel
+Population: 9216900
+
+Country: Sudan
+Population: 43849269
+
+Country: Eritrea
+Population: 5352000
+
+Country: Mali
+Population: 20250834
+
+Country: Somalia
+Population: 15893219
+
+Country: Comoros
+Population: 869595
+
+Country: Nicaragua
+Population: 6624554
+
+Country: Russia
+Population: 144104080
+
+Country: Uganda
+Population: 45741000
+
+Country: Switzerland
+Population: 8654622
+
+Country: Portugal
+Population: 10305564
+
+Country: Tajikistan
+Population: 9537642
+
+Country: South Sudan
+Population: 11193729
+
+Country: Czechia
+Population: 10698896
+
+Country: Botswana
+Population: 2351625
+
+Country: Tunisia
+Population: 11818618
+
+Country: Guinea-Bissau
+Population: 1967998
+
+Country: Slovakia
+Population: 5458827
+
+Country: Algeria
+Population: 44700000
+
+Country: Jamaica
+Population: 2961161
+
+Country: Mozambique
+Population: 31255435
+
+Country: Spain
+Population: 47351567
+
+Country: Honduras
+Population: 9904608
+
+Country: Netherlands
+Population: 16655799
+
+Country: South Africa
+Population: 59308690
+
+Country: Azerbaijan
+Population: 10110116
+
+Country: North Macedonia
+Population: 2077132
+
+Country: Gambia
+Population: 2416664
+
+Country: Liberia
+Population: 5057677
+
+Country: Luxembourg
+Population: 632275
+
+Country: Cape Verde
+Population: 555988
+
+Country: Bahamas
+Population: 393248
+
+Country: Georgia
+Population: 3714000
+
+Country: Tanzania
+Population: 59734213
+
+Country: China
+Population: 1402112000
+
+Country: Guatemala
+Population: 16858333
+
+Country: São Tomé and Príncipe
+Population: 219161
+
+Country: Germany
+Population: 83240525
+
+Country: Sierra Leone
+Population: 7976985
+
+Country: Chad
+Population: 16425859
+
+Country: United Kingdom
+Population: 67215293
+
+Country: Slovenia
+Population: 2100126
+
+Country: Thailand
+Population: 69799978
+
+Country: Indonesia
+Population: 273523621
+
+Country: Finland
+Population: 5530719
+
+Country: Mayotte
+Population: 226915
+
+Country: Turkmenistan
+Population: 6031187
+
+Country: Kosovo
+Population: 1775378
+
+Country: Ivory Coast
+Population: 26378275
+
+Country: Morocco
+Population: 36910558
+
+Country: Dominican Republic
+Population: 10847904
+
+Country: Ghana
+Population: 31072945
+
+Country: Turkey
+Population: 84339067
+
+Country: Iran
+Population: 83992953
+
+Country: Egypt
+Population: 102334403
+
+Country: Denmark
+Population: 5831404
+
+Country: Kenya
+Population: 53771300
+
+Country: Bulgaria
+Population: 6927288
+
+Country: Zimbabwe
+Population: 14862927
+
+Country: Angola
+Population: 32866268
+
+Country: Nigeria
+Population: 206139587
+
+Country: Poland
+Population: 37950802
+
+Country: Senegal
+Population: 16743930
+
+Country: Lebanon
+Population: 6825442
+
+Country: Philippines
+Population: 109581085
+
+Country: El Salvador
+Population: 6486201
+
+Country: Kuwait
+Population: 4270563
+
+Country: Oman
+Population: 5106622
+
+Country: Afghanistan
+Population: 40218234
+
+Country: Central African Republic
+Population: 4829764
+
+Country: Serbia
+Population: 6908224
+
+Country: Armenia
+Population: 2963234
+
+Country: Bangladesh
+Population: 164689383
+
+Country: Laos
+Population: 7275556
+
+Country: Chile
+Population: 19116209
+
+Country: French Polynesia
+Population: 280904
+
+Country: Panama
+Population: 4314768
+
+Country: United States
+Population: 329484123
+
+Country: Nepal
+Population: 29136808
+
+Country: Myanmar
+Population: 54409794
+
+Country: Hungary
+Population: 9749763
+
+Country: Equatorial Guinea
+Population: 1402985
+
+Country: Guinea
+Population: 13132792
+
+Country: United Arab Emirates
+Population: 9890400
+
+Country: Bosnia and Herzegovina
+Population: 3280815
+
+Country: Malawi
+Population: 19129955
+
+Country: Bhutan
+Population: 771612
+
+Country: Cameroon
+Population: 26545864
+
+Country: Guadeloupe
+Population: 400132
+
+Country: Republic of the Congo
+Population: 5657000
+
+Country: Réunion
+Population: 840974
+
+Country: Burkina Faso
+Population: 20903278
+
+Country: Jordan
+Population: 10203140
+
+Country: DR Congo
+Population: 108407721
+
+Country: Vietnam
+Population: 97338583
+
+Country: Belgium
+Population: 11555997
+
+Country: Brazil
+Population: 212559409
+
+Country: Belize
+Population: 397621
+
+Country: Paraguay
+Population: 7132530
+
+Country: Benin
+Population: 12123198
+
+Country: Brunei
+Population: 437483
+
+Country: Bolivia
+Population: 11673029
+
+Country: Djibouti
+Population: 988002
+
+Country: French Guiana
+Population: 254541
+
+Country: Canada
+Population: 38005238
+
+Country: Japan
+Population: 125836021
+
+Country: Rwanda
+Population: 12952209
+
+Country: Iceland
+Population: 366425
+
+Country: Belarus
+Population: 9398861
+
+Country: Hong Kong
+Population: 7500700
+
+Country: Lesotho
+Population: 2142252
+
+Country: Fiji
+Population: 896444
+
+Country: Austria
+Population: 8917205
+
+Country: Colombia
+Population: 50882884
+
+Country: Gabon
+Population: 2225728
+
+Country: Saudi Arabia
+Population: 34813867
+
+Country: Ethiopia
+Population: 114963583
+
+Country: North Korea
+Population: 25778815
+
+Country: Italy
+Population: 59554023
+
+Country: Namibia
+Population: 2540916
+
+Country: Mongolia
+Population: 3278292
+
+Country: Solomon Islands
+Population: 686878
+
+Country: Yemen
+Population: 29825968
+
+Country: Romania
+Population: 19286123
+
+Country: France
+Population: 67391582 -->
